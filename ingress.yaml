@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: team1
+  namespace: team1
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: team1.ddnss.de
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hello
+          servicePort: 80
+      - path: /podinfo
+        backend:
+          serviceName: podinfo
+          servicePort: 80
+      - path: /fibo
+        backend:
+          serviceName: fibo
+          servicePort: 80
+  - host: "podinfo.team1.ddnss.de"
+    http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: podinfo
+          servicePort: 80
