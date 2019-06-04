@@ -1,14 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: team1
-  namespace: team1
+  name: team3
+  namespace: team3
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: team1.ddnss.de
+  - host: team3.ddnss.de
     http:
       paths:
       - path: /
@@ -23,7 +23,7 @@ spec:
         backend:
           serviceName: fibo
           servicePort: 80
-  - host: "podinfo.team1.ddnss.de"
+  - host: "podinfo.team3.ddnss.de"
     http:
       paths:
       - path: /*
