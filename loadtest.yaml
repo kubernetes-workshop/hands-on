@@ -2,15 +2,15 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: loadtest
-  namespace: team1
+  namespace: team2
 spec:
   template:
     spec:
       containers:
       - name: loadtest-job
         image: fnbk/loadtest
-        command: ["/app/hey", "-z", "30s", "-c", "6400", "-m", "GET", "http://fibo.team1.svc.cluster.local" ]
-        #command: ["/app/hey", "-z", "30s", "-c", "6400", "-m", "GET", "http://team1.ddnss.de/fibo" ]
+        command: ["/app/hey", "-z", "30s", "-c", "6400", "-m", "GET", "http://fibo.team2.svc.cluster.local" ]
+        #command: ["/app/hey", "-z", "30s", "-c", "6400", "-m", "GET", "http://team2.ddnss.de/fibo" ]
       restartPolicy: Never
   parallelism: 2
   completions: 5
