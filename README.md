@@ -17,7 +17,7 @@ del $HOME\.azure\aksServicePrincipal.json
 
 # 2) download .kube\config
 mkdir $HOME\.kube\config
-Invoke-WebRequest 'https://handelsblatt.blob.core.windows.net/kube/config' -OutFile $HOME\.kube\config
+Invoke-WebRequest 'https://kubalibre.blob.core.windows.net/kube/config' -OutFile $HOME\.kube\config
 
 # 3) test connection to cluster
 kubectl get nodes
