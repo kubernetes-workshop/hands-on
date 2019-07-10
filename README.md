@@ -30,6 +30,7 @@ kubectl get nodes
 git checkout team1
 git checkout team2
 git checkout team3
+git checkout team4
 ```
 
 please refer to your workbook
